@@ -1,49 +1,75 @@
 {
-  "name": "cordova-plugin-printer",
-  "version": "0.8.0",
-  "description": "Prints HTML documents",
-  "cordova": {
-    "id": "cordova-plugin-printer",
-    "platforms": [
-      "ios",
-      "android",
-      "windows",
-      "browser"
-    ]
+  "name": "@dimer47/capacitor-plugin-printer",
+  "version": "2.0.0",
+  "description": "Capacitor plugin for printing HTML, PDF, images and plain text on iOS and Android",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "dist/",
+    "ios/Sources/",
+    "CapacitorPluginPrinter.podspec",
+    "Package.swift"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native",
+    "printer",
+    "print",
+    "pdf",
+    "html",
+    "ios",
+    "android"
+  ],
+  "scripts": {
+    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:web": "npm run build",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
+    "eslint": "eslint . --ext ts",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "build": "tsc && rollup -c rollup.config.mjs",
+    "test": "npm run test:ios && npm run test:android",
+    "test:ios": "xcodebuild test -scheme CapacitorPluginPrinter -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -quiet",
+    "test:android": "cd \"${ANDROID_HOST_PROJECT:-../../../Solutions/Agri+/Codes/app-signing/code/android}\" && ./gradlew :capacitor-plugin-printer:testDebugUnitTest",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Dimer47",
+  "license": "Apache-2.0",
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/katzer/cordova-plugin-printer.git"
+    "url": "git+https://github.com/dimer47/capacitor-plugin-printer.git"
   },
-  "keywords": [
-    "appplant",
-    "printer",
-    "cordova",
-    "ecosystem:cordova",
-    "cordova-ios",
-    "cordova-android",
-    "cordova-windows",
-    "cordova-browser"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
-    },
-    {
-      "name": "android-sdk",
-      "version": ">=19"
-    },
-    {
-      "name": "apple-ios",
-      "version": ">=8.0"
-    }
-  ],
-  "author": "Sebastián Katzer",
-  "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/katzer/cordova-plugin-printer/issues"
+    "url": "https://github.com/dimer47/capacitor-plugin-printer/issues"
   },
-  "homepage": "https://github.com/katzer/cordova-plugin-printer#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "typescript": "~5.6.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@capacitor/core": ">=8.0.0"
+  }
 }
