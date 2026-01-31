@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Sources/",
-    "CapacitorPrinter.podspec"
+    "CapacitorPrinter.podspec",
+    "Package.swift"
   ],
   "keywords": [
     "capacitor",
@@ -54,14 +55,14 @@
     "url": "https://github.com/dimer47/cordova-plugin-printer/issues"
   },
   "devDependencies": {
-    "@capacitor/android": "^6.0.0",
-    "@capacitor/core": "^6.0.0",
-    "@capacitor/ios": "^6.0.0",
-    "typescript": "~5.4.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "typescript": "~5.6.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "rollup": "^4.0.0"
   },
   "peerDependencies": {
-    "@capacitor/core": "^6.0.0"
+    "@capacitor/core": ">=8.0.0"
   }
 }
