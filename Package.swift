@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorPrinter",
+    name: "CapacitorPluginPrinter",
     platforms: [.iOS(.v15)],
     products: [
         .library(
