@@ -81,7 +81,9 @@ export interface PrintOptions {
   /**
    * Margin settings. Set to false to remove margins,
    * or provide an object with top/left/bottom/right values.
-   * Values can be numbers (points) or strings with units ('1cm', '10mm', '0.5in').
+   *
+   * iOS: values are in points. Strings with units ('1cm', '10mm', '0.5in') are supported.
+   * Android: values are converted to mils (thousandths of inch). Same unit strings are supported.
    */
   margin?: boolean | MarginOptions;
 
@@ -111,7 +113,12 @@ export interface PrintOptions {
   footer?: HeaderFooterOptions;
 
   /**
-   * Paper size configuration (iOS only).
+   * Paper size configuration (iOS + Android).
+   *
+   * Use `name` for standard sizes or `width`/`height` for custom dimensions.
+   * On Android, this sets the default media size in the print dialog
+   * (user can still change it). On iOS, the system selects the best
+   * matching paper from the printer's available stock.
    */
   paper?: PaperOptions;
 
@@ -190,9 +197,22 @@ export interface PaperOptions {
   width?: string | number;
   /** Paper height (e.g. '297mm' for A4). */
   height?: string | number;
-  /** Cut length for roll-fed printers. */
+  /** Cut length for roll-fed printers (iOS only). */
   length?: string | number;
-  /** Named paper size (e.g. 'A4'). */
+  /**
+   * Named paper size. Takes precedence over width/height.
+   *
+   * ISO sizes: 'A0'-'A10', 'B0'-'B10', 'C0'-'C10'
+   * North America: 'LETTER', 'LEGAL', 'TABLOID', 'LEDGER', 'JUNIOR_LEGAL',
+   *   'GOVT_LETTER', 'INDEX_3X5', '4X6', 'INDEX_5X8', 'QUARTO', 'FOOLSCAP'
+   * JIS: 'JIS_B0'-'JIS_B10', 'JIS_EXEC'
+   * Japanese: 'JPN_HAGAKI', 'JPN_OUFUKU', 'JPN_CHOU2'-'JPN_CHOU4',
+   *   'JPN_KAHU', 'JPN_KAKU2', 'JPN_YOU4'
+   * Chinese: 'ROC_8K', 'ROC_16K', 'PRC_1'-'PRC_10', 'PRC_16K',
+   *   'OM_PA_KAI', 'OM_DAI_PA_KAI', 'OM_JUURO_KU_KAI'
+   *
+   * Case-insensitive.
+   */
   name?: string;
 }
 

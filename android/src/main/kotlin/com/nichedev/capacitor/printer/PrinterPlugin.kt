@@ -75,6 +75,7 @@ class PrinterPlugin : Plugin() {
         call.getBoolean("javascript")?.let { settings.put("javascript", it) }
 
         call.getObject("font")?.let { settings.put("font", it) }
+        call.getObject("paper")?.let { settings.put("paper", it) }
         call.getObject("margin")?.let { settings.put("margin", it) }
         call.getBoolean("margin")?.let { settings.put("margin", it) }
 
