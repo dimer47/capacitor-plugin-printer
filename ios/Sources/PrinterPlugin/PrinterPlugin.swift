@@ -186,7 +186,7 @@ public class PrinterPlugin: CAPPlugin, CAPBridgedPlugin, UIPrintInteractionContr
                     item = webView.viewPrintFormatter()
                 }
             }
-        } else if let content = content, content.hasPrefix("<") {
+        } else if let content = content, content.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("<") {
             DispatchQueue.main.sync {
                 item = UIMarkupTextPrintFormatter(markupText: content)
             }

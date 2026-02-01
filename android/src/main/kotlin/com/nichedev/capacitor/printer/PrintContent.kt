@@ -28,7 +28,7 @@ class PrintContent private constructor(ctx: Context) {
     }
 
     private fun getContentType(path: String?, forcedMimeType: String? = null): ContentType {
-        if (path == null || path.isEmpty() || path.startsWith("<")) {
+        if (path == null || path.isEmpty() || path.trimStart().startsWith("<")) {
             return ContentType.HTML
         }
 
