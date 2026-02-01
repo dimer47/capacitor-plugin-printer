@@ -63,11 +63,11 @@ class PrinterPlugin : Plugin() {
                         return@executeOnMainThread
                     }
 
-                    pm.print(content, settings, webView) { completed ->
+                    pm.print(content, settings, webView, callback = { completed ->
                         val ret = JSObject()
                         ret.put("success", completed)
                         call.resolve(ret)
-                    }
+                    })
                 } catch (e: Exception) {
                     call.reject("Print failed: ${e.message}", e)
                 }
@@ -99,11 +99,11 @@ class PrinterPlugin : Plugin() {
                     call.reject("WebView not available")
                     return@executeOnMainThread
                 }
-                pm.print(html, settings, webView) { completed ->
+                pm.print(html, settings, webView, callback = { completed ->
                     val ret = JSObject()
                     ret.put("success", completed)
                     call.resolve(ret)
-                }
+                })
             } catch (e: Exception) {
                 call.reject("Print failed: ${e.message}", e)
             }
@@ -132,11 +132,11 @@ class PrinterPlugin : Plugin() {
                     call.reject("WebView not available")
                     return@executeOnMainThread
                 }
-                pm.print(path, settings, webView) { completed ->
+                pm.print(path, settings, webView, callback = { completed ->
                     val ret = JSObject()
                     ret.put("success", completed)
                     call.resolve(ret)
-                }
+                })
             } catch (e: Exception) {
                 call.reject("Print failed: ${e.message}", e)
             }
@@ -171,11 +171,11 @@ class PrinterPlugin : Plugin() {
                     call.reject("WebView not available")
                     return@executeOnMainThread
                 }
-                pm.print(content, settings, webView, forcedMimeType = mimeType) { completed ->
+                pm.print(content, settings, webView, callback = { completed ->
                     val ret = JSObject()
                     ret.put("success", completed)
                     call.resolve(ret)
-                }
+                }, forcedMimeType = mimeType)
             } catch (e: Exception) {
                 call.reject("Print failed: ${e.message}", e)
             }
@@ -205,11 +205,11 @@ class PrinterPlugin : Plugin() {
                     call.reject("WebView not available")
                     return@executeOnMainThread
                 }
-                pm.print(path, settings, webView, forcedMimeType = mimeType) { completed ->
+                pm.print(path, settings, webView, callback = { completed ->
                     val ret = JSObject()
                     ret.put("success", completed)
                     call.resolve(ret)
-                }
+                }, forcedMimeType = mimeType)
             } catch (e: Exception) {
                 call.reject("Print failed: ${e.message}", e)
             }
@@ -233,11 +233,11 @@ class PrinterPlugin : Plugin() {
                     call.reject("WebView not available")
                     return@executeOnMainThread
                 }
-                pm.print(null, settings, webView) { completed ->
+                pm.print(null, settings, webView, callback = { completed ->
                     val ret = JSObject()
                     ret.put("success", completed)
                     call.resolve(ret)
-                }
+                })
             } catch (e: Exception) {
                 call.reject("Print failed: ${e.message}", e)
             }
