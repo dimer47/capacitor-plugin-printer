@@ -2,3 +2,7 @@
 sdcard.img.lock
 /platforms
 sdcard.img
+.idea
+.build
+node_modules
+dist
