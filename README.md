@@ -1,7 +1,5 @@
 # 🖨️ Capacitor Plugin Printer
 
-![Version](https://img.shields.io/npm/v/@dimer47/capacitor-plugin-printer?color=red&style=flat-square) ![Last update](https://img.shields.io/github/last-commit/dimer47/capacitor-plugin-printer?color=yellow&label=Last%20update&style=flat-square) ![Bundle size](https://img.shields.io/bundlephobia/minzip/@dimer47/capacitor-plugin-printer?color=green&label=bundle%20size&style=flat-square) ![Repo size](https://img.shields.io/github/repo-size/dimer47/capacitor-plugin-printer?style=flat-square) ![Downloads](https://img.shields.io/npm/dt/@dimer47/capacitor-plugin-printer?style=flat-square) ![License](https://img.shields.io/github/license/dimer47/capacitor-plugin-printer?style=flat-square) ![Capacitor](https://img.shields.io/badge/Capacitor-8-blue?style=flat-square&logo=capacitor) ![iOS](https://img.shields.io/badge/iOS-15%2B-black?style=flat-square&logo=apple) ![Android](https://img.shields.io/badge/Android-7.0%2B-green?style=flat-square&logo=android)
-
 A [Capacitor](https://capacitorjs.com) plugin to print HTML, PDF, images, and plain text on iOS, Android, and Web.
 
 ```typescript
@@ -503,3 +501,7 @@ await Printer.printHtml({
 ## 🧾 License
 
 This software is released under the [Apache 2.0 License](http://opensource.org/licenses/Apache-2.0).
+
+## 📊 Project status
+
+![Version](https://img.shields.io/npm/v/@dimer47/capacitor-plugin-printer?color=red&style=flat-square) ![Last update](https://img.shields.io/github/last-commit/dimer47/capacitor-plugin-printer?color=yellow&label=Last%20update&style=flat-square) ![Unpacked size](https://img.shields.io/npm/unpacked-size/@dimer47/capacitor-plugin-printer?color=green&style=flat-square) ![Repo size](https://img.shields.io/github/repo-size/dimer47/capacitor-plugin-printer?style=flat-square) ![Downloads](https://img.shields.io/npm/dt/@dimer47/capacitor-plugin-printer?style=flat-square) ![License](https://img.shields.io/github/license/dimer47/capacitor-plugin-printer?style=flat-square) ![Capacitor](https://img.shields.io/badge/Capacitor-8-blue?style=flat-square&logo=capacitor) ![iOS](https://img.shields.io/badge/iOS-15%2B-black?style=flat-square&logo=apple) ![Android](https://img.shields.io/badge/Android-7.0%2B-green?style=flat-square&logo=android)
