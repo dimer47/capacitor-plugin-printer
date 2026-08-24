@@ -1,12 +1,14 @@
 // swift-tools-version: 5.9
 import PackageDescription
 
+// Product name must match Capacitor CLI SPM derivation from
+// `@dimer47/capacitor-plugin-printer` → `Dimer47CapacitorPluginPrinter`.
 let package = Package(
-    name: "CapacitorPluginPrinter",
+    name: "Dimer47CapacitorPluginPrinter",
     platforms: [.iOS(.v15)],
     products: [
         .library(
-            name: "PrinterPlugin",
+            name: "Dimer47CapacitorPluginPrinter",
             targets: ["PrinterPlugin"]
         )
     ],
