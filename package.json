@@ -1,6 +1,6 @@
 {
   "name": "@dimer47/capacitor-plugin-printer",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Capacitor plugin for printing HTML, PDF, images and plain text on iOS and Android",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

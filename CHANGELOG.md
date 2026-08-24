@@ -1,5 +1,25 @@
 ## ChangeLog
 
+#### Version 2.0.4 (24.08.2026)
+- [__change__:] Le paquet et le produit SPM sont renommés `Dimer47CapacitorPluginPrinter` pour correspondre à la dérivation du CLI Capacitor depuis `@dimer47/capacitor-plugin-printer` (#3, merci __keremtiryaki__)
+- [bugfix:] Corrige la résolution du paquet lors d'une intégration iOS via Swift Package Manager
+
+> __Note :__ le produit exposé passe de `PrinterPlugin` à `Dimer47CapacitorPluginPrinter`. Une référence écrite en dur telle que `.product(name: "PrinterPlugin", ...)` doit être mise à jour. Les intégrations CocoaPods ne sont pas concernées.
+
+#### Version 2.0.3 (29.05.2026)
+- [bugfix:] Corrige la configuration ProGuard (Android)
+
+#### Version 2.0.2 (01.02.2026)
+- [bugfix:] Supprime les espaces superflus lors des tests de contenu HTML
+
+#### Version 2.0.1 (01.02.2026)
+- [__change__:] `pm.print` utilise désormais des paramètres de callback explicites
+
+#### Version 2.0.0 (31.01.2026)
+- [__change__:] Migration de Cordova vers Capacitor, réécriture complète en Swift, Kotlin et TypeScript
+- [__change__:] Requiert iOS 15 ou plus récent
+
+
 #### Version 0.8.0 (01.03.2019)
 - Most parts of the code has been rewritten
 - Added support for Android 8+
